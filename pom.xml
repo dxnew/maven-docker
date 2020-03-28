@@ -16,7 +16,7 @@
     <properties>
         <testNGPath><!-- Define testNG xml for running tests for each specified profile --></testNGPath>
         <version.surefire>3.0.0-M3</version.surefire>
-        <run.tests.on>DEFAULT</run.tests.on>
+        <run.tests.on><!-- default --></run.tests.on>
     </properties>
 
     <profiles>
