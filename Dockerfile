@@ -12,6 +12,5 @@ WORKDIR /workspace/
 COPY maven_docker_base maven_docker_base
 COPY maven_docker_test maven_docker_test
 COPY pom.xml .
-COPY src src
 
 RUN mvn -q integration-test -PmyTest
