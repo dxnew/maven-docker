@@ -13,4 +13,4 @@ COPY maven_docker_base maven_docker_base
 COPY maven_docker_test maven_docker_test
 COPY pom.xml .
 
-RUN mvn -q integration-test -PmyTest -Prun-on${ENVIRONMENT}
+RUN mvn -q integration-test -PmyTest -Prun-on-${ENVIRONMENT}
