@@ -16,16 +16,32 @@
     <properties>
         <testNGPath><!-- Define testNG xml for running tests for each specified profile --></testNGPath>
         <version.surefire>3.0.0-M3</version.surefire>
+        <run.tests.on>DEFAULT</run.tests.on>
     </properties>
 
     <profiles>
         <profile>
             <id>myTest</id>
             <properties>
-                <testNGPath>${basedir}/src/main/resources/testng/test.xml</testNGPath>
+                <testNGPath>src/main/resources/testng/test.xml</testNGPath>
                 <skip.test>false</skip.test>
             </properties>
         </profile>
+
+        <profile>
+            <id>run-on-qa</id>
+            <properties>
+                <run.tests.on>QA</run.tests.on>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>run-on-uat</id>
+            <properties>
+                <run.tests.on>UAT</run.tests.on>
+            </properties>
+        </profile>
+
     </profiles>
 
     <build>
@@ -35,6 +51,13 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${version.surefire}</version>
+                    <configuration>
+                        <skip>true</skip>
+                        <testFailureIgnore>false</testFailureIgnore>
+                        <systemPropertyVariables>
+                            <environment>${run.tests.on}</environment>
+                        </systemPropertyVariables>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
