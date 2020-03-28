@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="myTest" verbose="1">
+    <test name="myTest">
+        <classes>
+            <class name="com.qq.RunTest"/>
+        </classes>
+    </test>
+
+</suite>
