@@ -4,6 +4,7 @@ pipeline {
           filename "Dockerfile"
           args "--no-cache -e 'ENVIRONMENT=${params.ENVIRONMENT}'"
         }
+        }
 
 //     parameters {
 //      choice(
