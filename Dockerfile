@@ -1,5 +1,7 @@
 FROM maven:3.6.3-jdk-11-openj9 as build
 
+RUN apk add --no-cache git
+
 ARG ENVIRONMENT
 ENV ENVIRONMENT=${ENVIRONMENT}
 
