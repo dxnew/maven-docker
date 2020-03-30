@@ -13,7 +13,7 @@ pipeline {
                 echo 'Hello World'
                 script {
                     def dockerBuildParams
-                    dockerBuildParams = "--build-arg ENVIRONMENT=$ENVIRONMENT"
+                    dockerBuildParams = "--build-arg ENVIRONMENT='$ENVIRONMENT' ."
                     docker.build("myimage:1.0", dockerBuildParams)
                 }
                 echo "env: ${ENVIRONMENT}"
