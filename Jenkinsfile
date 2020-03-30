@@ -2,12 +2,7 @@ def call() {
     def dockerBuildParams
     def env = System.getenv('ENVIRONMENT')
     pipeline {
-        agent {
-            dockerfile {
-                filename "Dockerfile"
-                //args "-e 'ENVIRONMENT=${params.ENVIRONMENT}'"
-            }
-        }
+        agent any
         parameters {
             choice(
                     name: 'ENVIRONMENT',
