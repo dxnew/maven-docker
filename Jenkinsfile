@@ -1,7 +1,10 @@
 pipeline {
     agent {
-    dockerfile true
-     }
+     dockerfile {
+          filename "Dockerfile"
+          args "--no-cache -e 'ENVIRONMENT=${params.ENVIRONMENT}'"
+        }
+
 //     parameters {
 //      choice(
 //         name: 'ENVIRONMENT',
