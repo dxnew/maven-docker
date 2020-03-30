@@ -1,6 +1,9 @@
 pipeline {
-    agent { dockerfile true }
-    parameters {
+    agent {
+    dockerfile true
+    args '-e "ENVIRONMENT"=${params.ENVIRONMENT}'
+     }
+    parameters {7
      choice(
         name: 'ENVIRONMENT',
         choices: 'qa\nuat',
@@ -11,7 +14,7 @@ pipeline {
       stage('Hello') {
          steps {
             echo 'Hello World'
-            echo "env: ${params.ENVIRONMENT}"
+            echo "env: ${ENVIRONMENT}"
          }
       }
    }
