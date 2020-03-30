@@ -1,11 +1,11 @@
 pipeline {
     agent {
+        docker {
+          args '-e "ENVIRONMENT=${params.ENVIRONMENT}"'
+        }
     dockerfile true
-    docker {
-      args '-e "ENVIRONMENT=${params.ENVIRONMENT}"'
-    }
      }
-    parameters {7
+    parameters {
      choice(
         name: 'ENVIRONMENT',
         choices: 'qa\nuat',
