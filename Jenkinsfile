@@ -1,8 +1,8 @@
 pipeline {
     agent {
-        docker {
-          dockerfile true
-          args '-e "ENVIRONMENT=${params.ENVIRONMENT}"'
+     dockerfile {
+          filename "Dockerfile"
+          args "-e 'ENVIRONMENT=${params.ENVIRONMENT}'"
         }
      }
     parameters {
