@@ -24,15 +24,15 @@ def call() {
                     }
                     echo "env: ${ENVIRONMENT}"
                 }
-                stage('Build') {
-                    steps {
-                        echo 'build'
-                        script {
-                            docker.build("myImage:1.0", dockerBuildParams)
-                        }
-                    }
-                }
+            }
+//                stage('Build') {
+//                    steps {
+//                        echo 'build'
+//                        script {
+//                            docker.build("myImage:1.0", dockerBuildParams)
+//                        }
+//                    }
+//                }
             }
         }
     }
-}
